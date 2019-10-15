@@ -1,0 +1,13 @@
+[{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.423262,52.497761]
+  },
+  "info": {
+    "name": "Cafe Commune",
+    "address": "Reichenberger Str. 157, 10999 Berlin",
+    "dates": "Jeden Dienstag 19 Uhr",
+    "langs": ["en", "de", "fr"]
+  }
+}]
