@@ -2,12 +2,72 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
+    "coordinates": [13.4444276,52.4803858]
+  },
+  "info": {
+    "name": "Neukölln @ Poropati",
+    "address": "Weserstr. 79, 12059 Berlin",
+    "dates": "Jeden Montag ab 19:00 Uhr"
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.3249992,52.4643625]
+  },
+  "info": {
+    "name": "Südwest Berlin @ GM 26",
+    "address": "Gutsmuthsstraße 26, 12163 Berlin",
+    "dates": "Jeden Montag ab 20:30 Uhr"
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
     "coordinates": [13.423262,52.497761]
   },
   "info": {
-    "name": "Cafe Commune",
+    "name": "Kreuzberg 36 @ Cafe Commune",
     "address": "Reichenberger Str. 157, 10999 Berlin",
-    "dates": "Jeden Dienstag 19 Uhr",
+    "dates": "Jeden Dienstag 19:00 Uhr",
     "langs": ["en", "de", "fr"]
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.3571556,52.534257]
+  },
+  "info": {
+    "name": "Moabit @ Kulturfabrik",
+    "address": "Lehrter Str. 35, 10557 Berlin",
+    "dates": "Jeden Mittwoch ab 19:00 Uhr"
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.3582513,52.4880632]
+  },
+  "info": {
+    "name": "Schöneberg @ Stadtteilladen Halk Kösesi",
+    "address": "Crellestr. 38, 10827 Berlin",
+    "dates": "Jeden Donnerstag ab 19:00 Uhr"
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.3902959,52.499747]
+  },
+  "info": {
+    "name": "Kreuzberg North @ Café MadaMe",
+    "address": "Mehringplatz 10, 10969 Berlin",
+    "dates": "Jeden Freitag ab 19:00 Uhr"
   }
 }]

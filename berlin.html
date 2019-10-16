@@ -73,7 +73,7 @@
 
     let map = new L.map('osm-map', {
       center: [52.5219, 13.4045],
-      zoom: 13,
+      zoom: 12,
       zoomControl: true
     });
 
@@ -93,21 +93,24 @@
         document.createTextNode(markerSizeClass.format(px, px / 2)));
     }
 
-    let dynNodeCSS = initDynamicMarkerSizeCSS(18);
+    let dynNodeCSS = initDynamicMarkerSizeCSS(24);
     map.on("zoomend", () => {
-      const px = Math.max(1, map.getZoom() - 10) * 6;
+      const px = Math.max(2, map.getZoom() - 10) * 8;
       dynNodeCSS.nodeValue = markerSizeClass.format(px, px / 2);
     });
 
     const options = {
       onEachFeature: (feature, layer) => {
         if (feature.info) {
-          let content = '<b>{0}</b><br>{1}<br>{2}<br>'.format(
+          let content = '<b>{0}</b><br>{1}<br>{2}'.format(
             feature.info.dates, feature.info.name, feature.info.address);
-          feature.info.langs.forEach(token => {
-            content += '<img class="flag" alt="{0}" src="flag_{0}.svg" title="{1}">'
-                          .format(token, humanReadable(token));
-          });
+          if (feature.info.langs) {
+            content += '<br>';
+            feature.info.langs.forEach(token => {
+              content += '<img class="flag" alt="{0}" src="flag_{0}.svg" title="{1}">'
+                            .format(token, humanReadable(token));
+            });
+          }
           layer.bindPopup(content);
         }
       },
