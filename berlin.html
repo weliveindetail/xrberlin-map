@@ -99,14 +99,14 @@
       pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {
           icon: L.icon({
-            iconUrl: 'marker-xr-cafe.png',
+            iconUrl: 'marker-cafe.png',
             className: 'marker-xr'
           })
         });
       }
     };
 
-    loadGeoJson("cafes.geojson").then(
+    loadGeoJson("berlin.geojson").then(
       json => { console.log(json); L.geoJSON(json, options).addTo(map); },
       err => console.error(err)
     );
