@@ -58,7 +58,7 @@
     function loadGeoJson(fileUrl) {
       return new Promise(function(resolve, reject) {
         $.ajax({ url: fileUrl })
-          .done(content => resolve(JSON.parse(content)))
+          .done(content => { console.log(content); resolve(JSON.parse(content)); })
           .fail(() => reject("Error querying " + fileUrl));
       });
     }
