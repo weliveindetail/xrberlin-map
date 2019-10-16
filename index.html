@@ -12,10 +12,10 @@
       height: 100%;
     }
     .marker-xr {
-      width: 24px;
-      height: 24px;
-      margin-left: -12px;
-      margin-top: -12px;
+      width: 16px;
+      height: 16px;
+      margin-left: -8px;
+      margin-top: -8px;
     }
     .flag {
       width: 22px;
@@ -63,7 +63,7 @@
       });
     }
 
-    function langForToken(lang) {
+    function humanReadable(lang) {
       switch (lang) {
         case 'de': return 'Deutsch';
         case 'en': return 'English';
@@ -76,14 +76,13 @@
 
     function bindPopups(feature, layer) {
       if (feature.info) {
-        const text = '<b>{0}</b><br>{1}<br>{2}<br>'.format(
+        let content = '<b>{0}</b><br>{1}<br>{2}<br>'.format(
           feature.info.dates, feature.info.name, feature.info.address);
-        let langs = '';
-        for (const lang of feature.info.langs) {
-          langs += '<img class="flag" alt="{0}" src="flag_{0}.svg" title="{1}">'.format(
-            lang, langForToken(lang));
-        }
-        layer.bindPopup(text + langs);
+        feature.info.langs.forEach(token => {
+          content += '<img class="flag" alt="{0}" src="flag_{0}.svg" title="{1}">'
+                        .format(token, humanReadable(token));
+        });
+        layer.bindPopup(content);
       }
     }
 
