@@ -2,7 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [13.4444276,52.4803858]
+    "coordinates": [13.446616,52.4803858]
   },
   "info": {
     "id": "neukoelln",
@@ -35,7 +35,11 @@
     "name": "Kreuzberg 36 @ Cafe Commune",
     "address": "Reichenberger Str. 157, 10999 Berlin",
     "dates": "Jeden Dienstag 19:00 Uhr",
-    "langs": ["en", "de", "fr"]
+    "langs": ["en", "de", "fr"],
+    "links": {
+      "Facebook": "https://www.facebook.com/events/702942520186861/",
+      "Meetup": "https://www.meetup.com/de-DE/Extinction-Rebellion-Berlin/events/xpkbkryznbdc/"
+    }
   }
 },
 {

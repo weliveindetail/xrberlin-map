@@ -123,6 +123,13 @@
                             .format(token, humanReadable(token));
             });
           }
+          if (feature.info.links) {
+            content += '<br><div style="text-align: right;">';
+            for (const key in feature.info.links) {
+              content += '<a href="{1}">{0}</a> '.format(key, feature.info.links[key]);
+            }
+            content += '</div>';
+          }
           popups[feature.info.id] = layer.bindPopup(content, {
             offset: L.point(0, -5)
           });
