@@ -40,6 +40,16 @@
       };
     }
 
+    function parseUrlParams(url) {
+      const regex = /[?&]([^=#]+)=([^&#]*)/g;
+      let params = {};
+      let match;
+      while(match = regex.exec(url)) {
+        params[match[1]] = match[2];
+      }
+      return params;
+    }
+
     function createBaseLayer() {
       return L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
         { attribution:
@@ -99,6 +109,8 @@
       dynNodeCSS.nodeValue = markerSizeClass.format(px, px / 2);
     });
 
+    let popups = {};
+
     const options = {
       onEachFeature: (feature, layer) => {
         if (feature.info) {
@@ -111,7 +123,9 @@
                             .format(token, humanReadable(token));
             });
           }
-          layer.bindPopup(content);
+          popups[feature.info.id] = layer.bindPopup(content, {
+            offset: L.point(0, -5)
+          });
         }
       },
       pointToLayer: (feature, latlng) => {
@@ -124,10 +138,15 @@
       }
     };
 
-    loadGeoJson("berlin.geojson").then(
-      json => { console.log(json); L.geoJSON(json, options).addTo(map); },
-      err => console.error(err)
-    );
+    loadGeoJson("berlin.geojson").then(json => {
+      console.log(json);
+      L.geoJSON(json, options).addTo(map);
+    }).then(() => {
+      const params = parseUrlParams(window.location.href);
+      if (params.hasOwnProperty("select")) {
+        popups[params.select].openPopup();
+      }
+    });
   </script>
 </body>
 </html>
